@@ -23,7 +23,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const {
     params: {id}
   } = context
-  
+
   const {data} = await axios.get(`http://app:3000/api/users/${id}`)
   return {
     props: {

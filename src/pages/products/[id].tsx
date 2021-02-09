@@ -30,7 +30,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
     params: {id}
   } = context
   
-  const {data} = await axios.get(`http://host.docker.internal:3000/products/${id}`)
+  //const {data} = await axios.get(`http://host.docker.internal:3000/products/${id}`)
+  const {data} = await axios.get(`${process.env.API_NEST_URL}/products/${id}`)
   return {
     props: {
       product: data 

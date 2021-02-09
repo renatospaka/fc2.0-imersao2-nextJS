@@ -30,7 +30,7 @@ const ProductsList: NextPage<ProductsLIstProps> = (props) => {
 export default ProductsList;
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const {data} = await axios.get('http://host.docker.internal:3000/products')
+  const {data} = await axios.get(`${process.env.API_NEST_URL}/products`)
   return {
     props: {
       products: data 
